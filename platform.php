@@ -1,19 +1,5 @@
 <h2>my platform</h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -70,3 +56,14 @@
 <button onclick="login()">iniciar</button>
 
 <ul id="list"></ul>
+
+<?php
+
+    $csv = file_get_contents('https://www.facebook.com/ads/lead_gen/export_csv/?id=441737826338956&type=form&source_type=graph_api');
+
+$fp = fopen ('https://www.facebook.com/ads/lead_gen/export_csv/?id=441737826338956&type=form&source_type=graph_api', 'r');
+$data = fgetcsv ($fp, 1000, "\040");
+
+
+
+var_dump($data);
